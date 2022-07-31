@@ -1,22 +1,125 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+// create the about section
+const generateDescription = description => {
+  if (!description) {
+    return '';
+  }
 
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Description</h2>
+      <p>${description}</p>
+    </section>
+  `;
+};
+// const generateTableOfContents = tableOfContents => {
+//   if (!tableOfContents {
+//     return '';
+//   }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+//   return `
+//     <section class="my-3" id="about">
+//       <h2 class="text-dark bg-primary p-2 display-inline-block">Table Of Contents</h2>
+//       <p>${tableOfContents}</p>
+//     </section>
+//   `;
+// };
+const generateInstallation = installation => {
+  if (!installation) {
+    return '';
+  }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Installation</h2>
+      <p>${installation}</p>
+    </section>
+  `;
+};
+const generateUsage = usage => {
+  if (!usage) {
+    return '';
+  }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Usage</h2>
+      <p>${usage}</p>
+    </section>
+  `;
+};
+const generateLicense = license => {
+  if (!license) {
+    return '';
+  }
+  const apache = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+  const boost = "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)"
+  const mit = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+  const isc = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"
+  let licenseLink;
 
-`;
-}
+  switch (license) {
+    case "MIT":
+      licenseLink = mit;
+    case "ISC":
+      licenseLink = isc;
+    case "Apache":
+      licenseLink = apache;
+    case "Boost":
+      licenseLink = boost;
+  }
 
-module.exports = generateMarkdown;
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">License</h2>
+      <p>${licenseLink}</p>
+    </section>
+  `;
+};
+const generateContributing = contributing => {
+  if (!contributing) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Contributing</h2>
+      <p>${contributing}</p>
+    </section>
+  `;
+};
+const generateTest = test => {
+  if (!test) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Tests</h2>
+      <p>${test}</p>
+    </section>
+  `;
+};
+const generateQuestions = (username, email) => {
+  if (!username && !email) {
+    return '';
+  }
+
+  return `
+    <section class="my-3" id="about">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">Questions</h2>
+      <p>Username: ${username}</p> 
+      </br>
+      <p>Email: ${email}</p>
+    </section>
+  `;
+};
+
+module.exports = {
+  generateDescription,
+  generateInstallation,
+  generateUsage,
+  generateLicense,
+  generateContributing,
+  generateTest,
+  generateQuestions
+};
