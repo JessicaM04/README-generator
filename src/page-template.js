@@ -5,7 +5,9 @@ const {
   generateLicense,
   generateContributing,
   generateTest,
-  generateQuestions
+  generateQuestions,
+  generateHRef,
+  generateSource
 } = require('../utils/generateMarkdown');
 
 module.exports = templateData => {
@@ -42,6 +44,9 @@ const {name, description, installation, usage, license, contributing, test, user
       ${generateInstallation(installation)}
       ${generateUsage(usage)}
       ${generateLicense(license)}
+      <a href=${generateHRef(license)}>
+        <img src=${generateSource(license)} alt="license">
+      </a>
       ${generateContributing(contributing)}
       ${generateTest(test)}
       ${generateQuestions(username, email)}

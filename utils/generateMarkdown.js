@@ -47,34 +47,33 @@ const generateUsage = usage => {
     </section>
   `;
 };
-const generateLicense = license => {
-  if (!license) {
-    return '';
-  }
-  const apache = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
-  const boost = "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)"
-  const mit = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-  const isc = "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"
-  let licenseLink;
 
+const generateSource = license => {
   switch (license) {
     case "MIT":
-      licenseLink = mit;
+      return "https://img.shields.io/badge/License-MIT-yellow.svg";
     case "ISC":
-      licenseLink = isc;
+      return "https://img.shields.io/badge/License-ISC-blue.svg";
     case "Apache":
-      licenseLink = apache;
+      return "https://img.shields.io/badge/License-Apache_2.0-blue.svg";
     case "Boost":
-      licenseLink = boost;
+      return "https://img.shields.io/badge/License-Boost_1.0-lightblue.svg";
   }
+}
 
-  return `
-    <section class="my-3" id="about">
-      <h2 class="text-dark bg-primary p-2 display-inline-block">License</h2>
-      <p>${licenseLink}</p>
-    </section>
-  `;
-};
+const generateHRef = license => {
+  switch (license) {
+    case "MIT":
+      return "https://opensource.org/licenses/MIT";
+    case "ISC":
+      return "https://opensource.org/licenses/ISC";
+    case "Apache":
+      return "https://opensource.org/licenses/Apache-2.0";
+    case "Boost":
+      return "https://www.boost.org/LICENSE_1_0.txt";
+  }
+}
+
 const generateContributing = contributing => {
   if (!contributing) {
     return '';
@@ -121,5 +120,7 @@ module.exports = {
   generateLicense,
   generateContributing,
   generateTest,
-  generateQuestions
+  generateQuestions,
+  generateHRef,
+  generateSource
 };
