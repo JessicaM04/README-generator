@@ -5,31 +5,20 @@ const generateDescription = description => {
   }
 
   return `
-    <section class="my-3" id="about">
+    <section class="my-3" id="description">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Description</h2>
       <p>${description}</p>
     </section>
   `;
 };
-// const generateTableOfContents = tableOfContents => {
-//   if (!tableOfContents {
-//     return '';
-//   }
 
-//   return `
-//     <section class="my-3" id="about">
-//       <h2 class="text-dark bg-primary p-2 display-inline-block">Table Of Contents</h2>
-//       <p>${tableOfContents}</p>
-//     </section>
-//   `;
-// };
 const generateInstallation = installation => {
   if (!installation) {
     return '';
   }
 
   return `
-    <section class="my-3" id="about">
+    <section class="my-3" id="installation">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Installation</h2>
       <p>${installation}</p>
     </section>
@@ -41,7 +30,7 @@ const generateUsage = usage => {
   }
 
   return `
-    <section class="my-3" id="about">
+    <section class="my-3" id="usage">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Usage</h2>
       <p>${usage}</p>
     </section>
@@ -74,13 +63,25 @@ const generateHRef = license => {
   }
 }
 
+const generateLicense = license => {
+  if(!license) {
+    return '';
+  }
+
+    return `
+    <section class="my-3" id="license">
+      <h2 class="text-dark bg-primary p-2 display-inline-block">License</h2>
+      <p>${license}</p>
+    </section>
+    `;
+}
 const generateContributing = contributing => {
   if (!contributing) {
     return '';
   }
 
   return `
-    <section class="my-3" id="about">
+    <section class="my-3" id="contributing">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Contributing</h2>
       <p>${contributing}</p>
     </section>
@@ -92,7 +93,7 @@ const generateTest = test => {
   }
 
   return `
-    <section class="my-3" id="about">
+    <section class="my-3" id="test">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Tests</h2>
       <p>${test}</p>
     </section>
@@ -104,7 +105,7 @@ const generateQuestions = (username, email) => {
   }
 
   return `
-    <section class="my-3" id="about">
+    <section class="my-3" id="questions">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Questions</h2>
       <p>Username: ${username}</p> 
       </br>

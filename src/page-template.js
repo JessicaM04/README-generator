@@ -39,6 +39,17 @@ const {name, description, installation, usage, license, contributing, test, user
         </nav>
       </div>
     </header>
+    <body>
+      <div class="nav">
+        <h1 class="TOC">Table of Contents</h1>
+          <h2><a href="#description">Description</a></h2>
+          <h2><a href="#installation">Installation</a></h2>
+          <h2><a href="#usage">Usage</a></h2>
+          <h2><a href="#license">License</a></h2>
+          <h2><a href="#contributing">Contributing</a></h2>
+          <h2><a href="#test">Tests</a></h2>
+          <h2><a href="questions">Questions</a></h2>
+      </div>
     <main class="container my-5">
       ${generateDescription(description)}
       ${generateInstallation(installation)}
