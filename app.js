@@ -33,19 +33,6 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'tableOfContents',
-    message: 'Please enter items for your table of contents.',
-    validate: tableOfContentsInput => {
-      if (tableOfContentsInput) {
-        return true;
-      } else {
-        console.log('Please enter items for your table of contents!');
-        return false;
-      }
-    }
-  },
-  {
-    type: 'input',
     name: 'installation',
     message: 'How do you install the application?',
     validate: installationInput => {
