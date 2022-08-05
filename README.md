@@ -8,6 +8,11 @@
  https://drive.google.com/file/d/1Y2wPuiARV7YpKEfcvB4q3aa2PGKEPwPB/view
  
  
+ Link to README that was generated during the Screencastify video of application in use:
+
+https://github.com/JessicaM04/README-generator/blob/main/dist/index.html
+ 
+ 
  Screenshots of README that was generated in the above video:
  
  <img width="1434" alt="Screen Shot 2022-08-04 at 9 55 47 PM" src="https://user-images.githubusercontent.com/103011054/182985582-8f63f688-cec3-49cd-a8cf-ec2ee28499a4.png">
