@@ -48,7 +48,7 @@ const {name, description, installation, usage, license, contributing, test, user
           <h2><a href="#license">License</a></h2>
           <h2><a href="#contributing">Contributing</a></h2>
           <h2><a href="#test">Tests</a></h2>
-          <h2><a href="questions">Questions</a></h2>
+          <h2><a href="#questions">Questions</a></h2>
       </div>
     <main class="container my-5">
       ${generateDescription(description)}
